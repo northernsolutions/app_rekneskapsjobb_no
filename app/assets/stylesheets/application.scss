@@ -10,7 +10,6 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
  */
 
@@ -22,4 +21,81 @@ body {
   -webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
   color:#4545454;
+}
+
+@media (min-width: 1200px) {
+  .container {
+      width: 1040px;
+  }
+}
+
+.navbar {
+    background: #fff;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 0px;
+    padding: 5px 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.nav > li {
+    text-align: center;
+}
+
+.navbar .navbar-nav > li > a {
+    font-weight: 500;
+    color: #454545;
+}
+
+.navbar-top {
+  background: #FFC107;
+}
+
+.navbar-brand {
+    color: #454545 !important;
+    font-weight: 800;
+    letter-spacing: -.05rem;
+    font-size: 20px !important;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #fff !important;
+}
+
+.btn-for-employers {
+  background: #FFC107 !important;
+  border-color: #FFC107 !important;
+  color: #fff !important;
+  font-weight: 500;
+  padding: 6px 12px !important;
+}
+
+
+
+.btn-navbar-top {
+  color:#fff !important;
+  font-weight: 500 !important;
+  padding-left:0rem;
+  padding-right:0rem;
+  background:transparent;
+  border-color:transparent;
+}
+
+.dropdown-menu-navbar-top {
+  margin:0rem !important;
+  border:1px solid #f5f5f5;
+  box-shadow:0 0 5px rgba(0, 0, 0, 0.1) !important;
+  border-top-left-radius: 0rem;
+  border-top-right-radius: 0rem;
+}
+
+.dropdown-menu-navbar-top > li > a:hover {
+  background:transparent !important;
+  color:#424242 !important;
+}
+
+.dropdown-menu-navbar-top > li > a {
+  color:#424242 !important;
+  font-weight: 500;
 }
