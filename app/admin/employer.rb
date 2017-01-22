@@ -1,17 +1,5 @@
 ActiveAdmin.register Employer do
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if params[:action] == 'create' && current_user.admin?
-#   permitted
-# end
-
+  permit_params :profile, :name, :about, :vision, :website, :facebook_link, :twitter_link, :youtube_link, :instagram_link, :google_plus_link, :linkedin_link, :published_at
 
 end

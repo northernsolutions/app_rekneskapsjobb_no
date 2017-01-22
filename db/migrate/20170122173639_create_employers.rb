@@ -5,13 +5,13 @@ class CreateEmployers < ActiveRecord::Migration[5.0]
       t.string :name
       t.text :about
       t.text :vision
-      t.string :website
-      t.string :facebook
-      t.string :twitter
-      t.string :youtube
-      t.string :instagram
-      t.string :google_plus
-      t.string :linkedin_string
+      t.string :website_link
+      t.string :facebook_link
+      t.string :twitter_link
+      t.string :youtube_link
+      t.string :instagram_link
+      t.string :google_plus_link
+      t.string :linkedin_link
 
       t.timestamps
     end

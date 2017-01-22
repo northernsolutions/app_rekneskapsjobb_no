@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170122173841) do
+ActiveRecord::Schema.define(version: 20170122175148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,15 +51,15 @@ ActiveRecord::Schema.define(version: 20170122173841) do
     t.string   "name"
     t.text     "about"
     t.text     "vision"
-    t.string   "website"
-    t.string   "facebook"
-    t.string   "twitter"
-    t.string   "youtube"
-    t.string   "instagram"
-    t.string   "google_plus"
-    t.string   "linkedin_string"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "website_link"
+    t.string   "facebook_link"
+    t.string   "twitter_link"
+    t.string   "youtube_link"
+    t.string   "instagram_link"
+    t.string   "google_plus_link"
+    t.string   "linkedin_link"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.datetime "published_at"
   end
 
@@ -75,4 +75,26 @@ ActiveRecord::Schema.define(version: 20170122173841) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "jobs", force: :cascade do |t|
+    t.boolean  "exclusive"
+    t.integer  "employer_id"
+    t.integer  "job_category_id"
+    t.integer  "job_type_id"
+    t.string   "title"
+    t.text     "content"
+    t.string   "location"
+    t.date     "apply_date"
+    t.text     "apply_info"
+    t.text     "contact_info"
+    t.datetime "published_at"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["employer_id"], name: "index_jobs_on_employer_id", using: :btree
+    t.index ["job_category_id"], name: "index_jobs_on_job_category_id", using: :btree
+    t.index ["job_type_id"], name: "index_jobs_on_job_type_id", using: :btree
+  end
+
+  add_foreign_key "jobs", "employers"
+  add_foreign_key "jobs", "job_categories"
+  add_foreign_key "jobs", "job_types"
 end
