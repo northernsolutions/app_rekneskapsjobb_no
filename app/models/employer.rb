@@ -1,4 +1,6 @@
 class Employer < ApplicationRecord
+  has_many :jobs
+  
   validates :profile, presence: false
   validates :name, presence: false
   validates :about, presence: false
