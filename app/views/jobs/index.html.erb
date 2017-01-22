@@ -1,2 +1,46 @@
-<h1>Jobs#index</h1>
-<p>Find me in app/views/jobs/index.html.erb</p>
+<page id="jobs_index">
+  <div class="page-content padding-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <a href="#" class="thumbnail">
+            <img src="#">
+          </a>
+        </div>
+        <div class="col-md-8">
+          <h4 class="bold" style="margin-bottom:24px !important;"><%= @jobs.count(:published_at) %> Ledige Stillinger</h4>
+          <% @jobs.each do |job| %>
+            <% if job.published_at? %>
+              <div class="job-listing-single-job">
+                <div class="row">
+                  <div class="col-md-3">
+                    <a href="#" class="thumbnail">
+                      <img src="..." alt="...">
+                    </a>
+                  </div>
+                  <div class="col-md-9">
+                    <p><span class="bold"><% if job.exclusive %> <span class="label label-exclusive">Exclusive</span> &nbsp; <% end %><%= job.employer.name %></span> &middot; <%= job.job_category.name %> &middot; <%= job.job_type.name %></p>
+                    <h4 class="bold"><%= job.title %></h4>
+                    <p class="justify muted"><%= truncate(job.content.html_safe, length: 150, :escape => false) %></p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+          <div class="job-listing-paginate">
+            <div class="row">
+              <div class="col-md-12">
+                <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2">
+          <a href="#" class="thumbnail">
+            <img src="#">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</page>

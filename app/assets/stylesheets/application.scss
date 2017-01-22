@@ -117,3 +117,48 @@ body {
     border: 1px solid transparent;
     border-radius: 4px;
 }
+
+.padding-2 {
+  padding:2rem 0rem;
+}
+
+.bold {
+  font-weight: 500 !important;
+}
+
+.margin-0 {
+  margin:0rem !important;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.muted {
+  color:#656565;
+}
+
+h4 {
+  margin-top:0px !important;
+  margin-bottom:5px !important;
+}
+
+p {
+  margin-bottom: 5px !important;
+}
+
+.job-listing-single-job {
+  margin-bottom:24px;
+}
+
+.label-exclusive {
+  background:#FFC107 !important;
+  border:1px solid #FFC107 !important;
+  color:#fff;
+  font-weight: 500;
+  font-size:14px;
+}
+
+.job-listing-paginate {
+  text-align: center !important;
+}
