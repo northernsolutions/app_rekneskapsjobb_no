@@ -1,6 +1,9 @@
 class Employer < ApplicationRecord
   has_many :jobs
-  
+
+  scope :published, ->{ where.not(published_at: nil)}
+  scope :unpublished, ->{ where(published_at: nil)}
+
   validates :profile, presence: false
   validates :name, presence: false
   validates :about, presence: false

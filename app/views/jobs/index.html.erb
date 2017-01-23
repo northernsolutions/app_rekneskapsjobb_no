@@ -2,26 +2,27 @@
   <div class="page-content padding-2">
     <div class="container">
       <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-2 hidden-xs">
           <a href="#" class="thumbnail">
             <img src="#">
           </a>
         </div>
-        <div class="col-md-8">
-          <h4 class="bold" style="margin-bottom:24px !important;"><%= @jobs.count(:published_at) %> Ledige Stillinger</h4>
+        <div class="col-md-8 col-xs-12">
+          <h4 class="bold" style="margin-bottom:24px !important;"><%= @jobs.count %> Ledige Stillinger</h4>
           <% @jobs.each do |job| %>
             <% if job.published_at? %>
               <div class="job-listing-single-job">
                 <div class="row">
-                  <div class="col-md-3">
+                  <div class="col-md-3 col-xs-6">
                     <a href="#" class="thumbnail">
                       <img src="..." alt="...">
                     </a>
                   </div>
-                  <div class="col-md-9">
+                  <div class="col-md-9 col-xs-12">
                     <p><span class="bold"><% if job.exclusive %> <span class="label label-exclusive">Exclusive</span> &nbsp; <% end %><%= job.employer.name %></span> &middot; <%= job.job_category.name %> &middot; <%= job.job_type.name %></p>
                     <h4 class="bold"><%= job.title %></h4>
-                    <p class="justify muted"><%= truncate(job.content.html_safe, length: 150, :escape => false) %></p>
+                    <p class="justify muted"><%= truncate(job.content.html_safe, length: 100, :escape => false) %></p>
+                    <%= link_to(job) do %><button class="btn btn-view-job">Visa annonse</button><% end %><% if job.employer.profile %> &nbsp; <%= link_to(job.employer) do %><button class="btn btn-view-employer">Visa Bedriftsprofil</button><% end %><% end %><% if job.exclusive %> &nbsp; <button class="btn btn-apply-now">Søk nå</button> <% end %>
                   </div>
                 </div>
               </div>
@@ -35,7 +36,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2 hidden-xs">
           <a href="#" class="thumbnail">
             <img src="#">
           </a>

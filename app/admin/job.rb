@@ -2,6 +2,10 @@ ActiveAdmin.register Job do
 
   permit_params :exclusive, :employer_id, :job_category_id, :job_type_id, :title, :content, :location, :apply_date, :apply_info, :contact_info, :published_at
 
+  scope :all
+  scope :published
+  scope :unpublished
+
   action_item :view, only: :show do
     link_to 'View on site', job_path(job) if job.published_at?
   end
