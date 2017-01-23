@@ -22,4 +22,6 @@ class Employer < ApplicationRecord
   validates :google_plus_link, presence: false
   validates :linkedin_link, presence: false
   validates :published_at, presence: false
+  validates :employer_header_image, presence: false
+  validates :employer_logo_image, presence: false
 end
