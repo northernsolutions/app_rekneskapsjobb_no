@@ -4,6 +4,12 @@ class Employer < ApplicationRecord
   scope :published, ->{ where.not(published_at: nil)}
   scope :unpublished, ->{ where(published_at: nil)}
 
+  has_attached_file :employer_header_image, styles: { medium: "300x300>", thumb: "100x100>" }
+  validates_attachment_content_type :employer_header_image, content_type: /\Aimage\/.*\z/
+
+  has_attached_file :employer_logo_image, styles: { medium: "1300x300>", thumb: "100x100>" }
+  validates_attachment_content_type :employer_logo_image, content_type: /\Aimage\/.*\z/
+
   validates :profile, presence: false
   validates :name, presence: false
   validates :about, presence: false
