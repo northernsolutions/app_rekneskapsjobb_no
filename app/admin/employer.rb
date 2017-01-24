@@ -55,8 +55,8 @@ ActiveAdmin.register Employer do
     f.inputs do
       f.input :profile
       f.input :name
-      f.input :about
-      f.input :vision
+      f.input :about, as: :html_editor
+      f.input :vision, as: :html_editor
       f.input :website_link
       f.input :facebook_link
       f.input :twitter_link

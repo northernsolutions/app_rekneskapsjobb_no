@@ -4,27 +4,36 @@
       <div class="row">
         <div class="col-md-2 hidden-xs">
           <div class="left_banner_image">
-            <% @banners.each do |banner| %>
-              <%= image_tag banner.left_banner_image, class:"thumbnail" %>
+            <% if @job.exclusive == false %>
+              <% @banners.each do |banner| %>
+                <%= image_tag banner.left_banner_image, class:"thumbnail" %>
+              <% end %>
             <% end %>
           </div>
         </div>
         <div class="col-md-8">
           <div class="job" style="padding:12px 0px;">
             <div class="row">
+              <div class="col-md-12">
+                <% if @job.exclusive %>
+                  <%= image_tag @job.employer.employer_header_image, class:"thumbnail", style:"border-radius:0px !important;border:none !important;margin-bottom:24px !important;" %>
+                <% end %>
+              </div>
+            </div>
+            <div class="row">
               <div class="col-md-3 col-xs-6">
                 <%= image_tag @job.employer.employer_logo_image, class:"thumbnail" %>
-                <% if @job.employer.profile %><button class="btn btn-view-employer" style="background:#424242 !important;border-color:#424242 !important;margin-top:12px !important;width:100% !important;">Visa Bedriftsprofil</button><% end %>
+                <% if @job.exclusive %><% if @job.employer.profile %><%= link_to "Visa Bedriftsprofil", @job.employer, class:"btn btn-view-employer", style:"background:#424242 !important;border-color:#424242 !important;margin-top:12px !important;width:100% !important;" %><% end %><% end %>
               </div>
               <div class="col-md-9 col-xs-12">
-                <p style="margin-top:24px !important;"><span class="bold"><% if @job.exclusive %> <span class="label label-exclusive">Exclusive</span> &nbsp; <% end %><%= @job.employer.name %></span> &middot; <%= @job.job_category.name %> &middot; <%= @job.job_type.name %></p>
+                <p><span class="bold"><% if @job.exclusive %> <span class="label label-exclusive">Exclusive</span> &nbsp; <% end %><%= @job.employer.name %></span> &middot; <%= @job.job_category.name %> &middot; <%= @job.job_type.name %></p>
                 <h4 class="bold" style="margin-bottom:0px !important;"><%= @job.title %></h4>
               </div>
             </div>
             <div class="row">
               <div class="col-md-12">
                 <div class="job-content" style="padding:24px 0px;">
-                  <span><%= @job.content %></span>
+                  <span><%= @job.content.html_safe %></span>
                 </div>
               </div>
             </div>
@@ -39,8 +48,10 @@
         </div>
         <div class="col-md-2 hidden-xs">
           <div class="right_banner_image">
-            <% @banners.each do |banner| %>
-              <%= image_tag banner.right_banner_image, class:"thumbnail" %>
+            <% if @job.exclusive == false %>
+              <% @banners.each do |banner| %>
+                <%= image_tag banner.right_banner_image, class:"thumbnail" %>
+              <% end %>
             <% end %>
           </div>
         </div>

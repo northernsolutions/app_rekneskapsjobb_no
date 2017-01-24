@@ -30,4 +30,36 @@ ActiveAdmin.register Job do
     redirect_to admin_job_path(job)
   end
 
+  show do |t|
+    attributes_table do
+      row :exclusive
+      row :employer
+      row :job_category
+      row :job_type
+      row :title
+      row :content
+      row :location
+      row :apply_date
+      row :apply_info
+      row :contact_info
+      row :published_at
+    end
+  end
+
+  form :html => { :enctype => "multipart/form-data" } do |f|
+    f.inputs do
+      f.input :exclusive
+      f.input :employer
+      f.input :job_category
+      f.input :job_type
+      f.input :title
+      f.input :content, as: :html_editor
+      f.input :location
+      f.input :apply_date
+      f.input :apply_info, as: :html_editor
+      f.input :contact_info, as: :html_editor
+    end
+    f.actions
+  end
+
 end

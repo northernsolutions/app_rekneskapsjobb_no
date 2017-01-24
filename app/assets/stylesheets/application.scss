@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_self
+ //= require active_admin/editor/wysiwyg
  */
 
  @import "bootstrap-sprockets";
@@ -266,10 +267,51 @@ a {
   font-size:14px;
 }
 
-.btn {
-  border-radius:0px !important;
-}
-
 .label {
   border-radius: 0px !important;
+}
+
+.form-control {
+  box-shadow: none !important;
+  border:1px solid #f5f5f5 !important;
+}
+
+#job_category {
+  border-radius: 0px !important;
+}
+
+.pagination .prev {
+  display:none !important;
+}
+
+.pagination .next {
+  display:none !important;
+}
+
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+    z-index: 3;
+    color: #fff;
+    background-color: #FFC107 !important;
+    border-color: #FFC107 !important;
+    cursor: default;
+}
+
+.pagination > li > a, .pagination > li > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    color: #424242;
+    background-color: #fff;
+    border: 1px solid #f5f5f5;
+    margin-left: -1px;
+}
+
+.btn {
+  border-radius: 3px;
+}
+
+.form-control {
+  border-radius: 3px;
 }
