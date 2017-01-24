@@ -22,13 +22,13 @@ class Job < ApplicationRecord
   validates :published_at, presence: false
 
   def self.search(params)
-  if params[:job_category] and params[:job_type].present?
-    jobs = Job.where(job_category_id: params[:job_category].to_i, job_type_id: params[:job_type].to_i)
-    jobs = jobs.where("title like ? or content like ?", "%#{params[:search]}%", "%#{params[:search]}%") if params[:search].present?
-    jobs = jobs.near(params[:location], 20) if params[:location].present?
-  else
-    jobs = Job.where("title like ? or content like ?", "%#{params[:search]}%", "%#{params[:search]}%") if params[:search].present?
+    if params[:job_category] and params[:job_type].present?
+      jobs = Job.where(job_category_id: params[:job_category].to_i, job_type_id: params[:job_type].to_i)
+      jobs = jobs.where("title like ? or content like ?", "%#{params[:search]}%", "%#{params[:search]}%") if params[:search].present?
+      jobs = jobs.near(params[:location], 20) if params[:location].present?
+    else
+      jobs = Job.where("title like ? or content like ?", "%#{params[:search]}%", "%#{params[:search]}%") if params[:search].present?
+    end
+    jobs
   end
-  jobs
-end
 end
