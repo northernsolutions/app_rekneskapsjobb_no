@@ -10,6 +10,7 @@ class JobsController < ApplicationController
   end
 
   def search
+    @banners = Banner.all
     @jobs = Job.search(params)
   end
 end

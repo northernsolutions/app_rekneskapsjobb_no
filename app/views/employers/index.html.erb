@@ -1,2 +1,34 @@
-<h1>Employers#index</h1>
-<p>Find me in app/views/employers/index.html.erb</p>
+<page id="about_index">
+  <div class="page-header center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+          <h2 class="bold uppercase">Bedriftsprofiler</h2>
+          <p class="text-muted uppercase bold">Få en inblick inifrån hos din nya arbetsgivare</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-content">
+    <div class="container">
+      <div class="row">
+        <% @employers.each do |employer| %>
+          <% if employer.profile %>
+            <% if employer.published_at? %>
+              <div class="col-md-4">
+                <div class="employer-card" style="margin-bottom:36px;">
+                  <%= image_tag employer.employer_header_image, class:"thumnail", style:"width:100%;border-top-left-radius:3px;border-top-right-radius:3px;margin-bottom:24px;" %>
+                  <%= image_tag employer.employer_logo_image, class:"thumnail", style:"border-top-left-radius:3px;border-top-right-radius:3px;margin-bottom:24px;" %>
+                  <h4 class="bold"><%= employer.name %></h4>
+                  <p class="text-small text-muted bold uppercase"><%= employer.jobs.count %> ledige stillinger</p>
+                  <p class="text-muted justify" style="margin-bottom: 24px !important;"><%= employer.summary %></p>
+                  <%= link_to "Visa Bedriftsprofil", employer, class:"btn btn-lg btn-view-employer", style:"width:100%;" %>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

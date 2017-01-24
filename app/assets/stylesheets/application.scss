@@ -24,12 +24,6 @@ body {
   color:#4545454;
 }
 
-@media (min-width: 1200px) {
-  .container {
-      width: 1040px;
-  }
-}
-
 .navbar {
     background: #fff;
     border: none;
@@ -65,6 +59,14 @@ body {
 }
 
 .btn-for-employers {
+  background: #FFC107 !important;
+  border-color: #FFC107 !important;
+  color: #fff !important;
+  font-weight: 500;
+  padding: 6px 12px !important;
+}
+
+.btn-for-employers:hover {
   background: #FFC107 !important;
   border-color: #FFC107 !important;
   color: #fff !important;
@@ -263,6 +265,11 @@ a {
   color:#424242;
 }
 
+a:hover {
+
+  text-decoration: none !important;
+}
+
 .btn-lg {
   font-size:14px;
 }
@@ -294,6 +301,7 @@ a {
     background-color: #FFC107 !important;
     border-color: #FFC107 !important;
     cursor: default;
+    font-weight: 500 !important;
 }
 
 .pagination > li > a, .pagination > li > span {
@@ -314,4 +322,89 @@ a {
 
 .form-control {
   border-radius: 3px;
+}
+
+.job-listing-single-job {
+  margin-bottom: 24px;
+  padding: 24px 0px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.main-wrapper {
+  min-height: 100vh;
+}
+
+.dropdown-header {
+    display: block;
+    font-size: 12px;
+    line-height: 1.42857143;
+    color: #777777;
+    white-space: nowrap;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 3px 20px;
+}
+
+.nav-pills {
+  background:#424242;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color: #fff;
+    background-color: #FFC107 !important;
+    border-radius: 0px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.nav-pills > li > a {
+    border-radius: 0px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.nav-pills > li > a:hover {
+    border-radius: 0px;
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+    background: #FFC107 !important;
+}
+
+p {
+  font-size:14px !important;
+}
+
+.pagination > li > a, .pagination > li > span {
+  font-weight: 500 !important;
+}
+
+.nav-tabs-justified > .active > a, .nav-tabs.nav-justified > .active > a, .nav-tabs-justified > .active > a:hover, .nav-tabs.nav-justified > .active > a:hover, .nav-tabs-justified > .active > a:focus, .nav-tabs.nav-justified > .active > a:focus {
+    border-bottom-color: #FFC107 !important;
+    background: #FFC107 !important;
+    border: 1px solid #FFC107 !important;
+    border-radius: 0rem;
+    color: #fff;
+}
+
+.nav-tabs-justified > li > a, .nav-tabs.nav-justified > li > a {
+    border-bottom: 1px solid #424242;
+    border-radius: 0px;
+    border: 1px solid #424242;
+    background: #424242;
+    color: #fff;
+}
+
+.nav-tabs.nav-justified > li > a:hover {
+  border-bottom-color: #FFC107 !important;
+  background: #FFC107 !important;
+  border: 1px solid #FFC107 !important;
+  border-radius: 0rem;
+  color: #fff;
+}
+
+.thumnail-ns {
+  width: 170px !important;
+  padding: 16px !important;
 }
